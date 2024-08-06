@@ -9,14 +9,18 @@ return fetch(url).then((response) => response.json());
 }
 
 function displayAllProducts(){
-	getAllProducts().then((products) => mainContainer.innerHTML = products.map(product => 
+	getAllProducts().then((products) =>
+		 mainContainer.innerHTML = products.map(
+			product => 
 		`
-		<div class="product-card">
-		<h3 class="card-title-and-author">${product.name} - ${product.author} </h3>
+		<div class="product-card flex-col gap-20 items-center justify-between">
+		<h3 class="card-title-and-author title-font text-align-center">${product.name}  <span class="author" ><p>${product.author}</p></span> </h3>
+		<img src = ${product.imageUrl} width="100px"/>
+		<p class="card-price">${product.price} RON</p>
 		</div>
 		`
 
-	))
+	).join(' '))
 }
 //  async function getAllProducts() {
 // 	const response = await fetch(url);
