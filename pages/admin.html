@@ -13,6 +13,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="../css/admin.css" />
   </head>
   <body>
     <div class="container">
@@ -30,9 +31,48 @@
           <a href="cart.html">Cart</a>
         </div>
       </div>
-      <div class="main">admin</div>
+      <div class="main">
+        admin page
+        <form id="product-form">
+          <div>
+            <label for="bkname">Product name</label>
+            <input type="text" id="bkname" />
+          </div>
+          <div>
+            <label for="bkauth">Author</label>
+            <input type="text" id="bkauth" />
+          </div>
+          <div>
+            <label for="bkprice">Price</label>
+            <input type="number" id="bkprice" />
+          </div>
+          <div>
+            <label for="bkimg-url">Image</label>
+            <input type="text" id="bkimg-url" />
+          </div>
+          <div>
+            <label for="bkdetail">Details</label>
+            <input type="text" id="bkdetails" />
+          </div>
+          <button class="save-btn">Save Product</button>
+        </form>
+        <table id="products-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Auth</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Details</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
       <div class="footer"></div>
     </div>
-    <script src="index.js"></script>
+    <script type="module" src="../js/admin.js"></script>
   </body>
 </html>

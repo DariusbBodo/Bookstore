@@ -1,0 +1,59 @@
+:root {
+    --primary-bg-color: #F8EDE3;
+    --primary-text-color: black;
+    --secondary-color: #D0B8A8;
+}
+
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+padding: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+margin-bottom: 30px;
+}
+
+
+form div {
+    display: flex;
+    flex-direction: column;
+
+}
+form div input {
+    border-radius: 50px;
+    border: solic black 2px;
+    /* height: 30px; */
+    padding: 5px;
+    font-size: 16px;
+}
+form div label {
+    margin-bottom: 3px;
+}
+
+form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color:var(--secondary-color) ;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    color: var(--primary-bg-color);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid gray;
+}
+th, td{
+    padding: 10px;
+    /* align-items: center; */
+}
+button {
+    cursor: pointer;
+}
