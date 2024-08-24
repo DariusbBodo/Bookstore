@@ -1,4 +1,11 @@
 
+import { getAllProducts } from "../api/products.js";
+import { getAllProductsById } from "../api/products.js";
+import { mapProductToAdminTable } from "../utils/layout.js";
+
+
+
+
 //load product in table at page loading
 const url = 'https://668d7a70099db4c579f3186c.mockapi.io/Produsee';
 
@@ -8,45 +15,50 @@ let currentEditabileProductId;
 
 document.addEventListener('DOMContentLoaded', displayAllProducts);
 
-function getAllProducts() {
-return fetch(url).then((response) => response.json());
-}
-
-
-function getAllProductsById(id) {
-return fetch(`${url}/${id}`).then((response) => response.json());
-}
 
 
 
+// function getAllProducts() { - refactorizat in products.js
+// return fetch(url).then((response) => response.json());
+// }
 
-function displayAllProducts() {
-getAllProducts().then(products => {
-    productsTableBody.innerHTML = products.map(product => `
-        <tr>
-<td>${product.name}</td>
-<td>${product.author}</td>
-<td>${product.price}</td>
-<td>
-<img src ="../${product.imageUrl} " width="50px" />
-</td>
-<td>${product.details}</td>
-<td>
-    <button class="edit-${product.id} ">
-        <i class="fa-solid fa-pen-nib"></i>
-    </button>
-</td>
-<td>
-    <button class="delete-${product.id}">
-        <i class="fa-solid fa-eraser"></i>
-    </button>
-</td>
-        </tr>
-        `)
-.join(' ')
-})
 
-}
+// function getAllProductsById(id) { - refactorizat in products.js
+// return fetch(`${url}/${id}`).then((response) => response.json());
+// }
+
+
+
+
+async function displayAllProducts() {
+    const products = await getAllProducts();
+    productsTableBody.innerHTML = products.map(mapProductToAdminTable).join('')}
+//         product =>
+//          `
+//         <tr>
+// <td>${product.name}</td>
+// <td>${product.author}</td>
+// <td>${product.price} lei</td>
+// <td>
+// <img src ="../${product.imageUrl} " width="50px" />
+// </td>
+// <td>${product.details}</td>
+// <td>
+//     <button class="edit-${product.id} ">
+//         <i class="fa-solid fa-pen-nib"></i>
+//     </button>
+// </td>
+// <td>
+//     <button class="delete-${product.id}">
+//         <i class="fa-solid fa-eraser"></i>
+//     </button>
+// </td>
+//         </tr>
+//         `)
+// .join(' ')
+// }
+
+
 //save new product in table
 const form = document.getElementById('product-form')
 const nameInput = document.getElementById('bkname');
@@ -129,7 +141,5 @@ editMode = true;
 function deleteProduct(id) {
     fetch(`${url}/${id}`, {
         method: 'DELETE',
-    }).then(()=>{displayAllProducts();
-
-    })
+    }).then(()=>{displayAllProducts();})
 }
