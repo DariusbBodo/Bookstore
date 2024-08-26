@@ -7,12 +7,16 @@ export function mapProductToCard(product){
             </a>
 		<p class='card-price'>${product.price} lei     
             <span>  
-                <button class='add-to-cart' data-id=${product.id}>
+                <button class='add-to-cart' data-id=${product.id} 
+                data-name=${product.name} data-price=${product.price}
+          data-image=${product.imageUrl}>
                     <i class="fa-solid fa-cart-shopping"></i>
                 </button>
             </span>
         </p>
-		  <!--  <button class='add-to-cart' data-id=${product.id}>
+		  <!--  <button class='add-to-cart' data-id=${product.id} 
+          data-name=${product.name} data-price=${product.price}
+          data-image=${product.imageUrl}>
                 <i class="fa-solid fa-cart-shopping"></i>
             </button> -->
 		
