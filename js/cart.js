@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const cartItemsContainer = document.querySelector('.cart-items');
 	const cartTotalContainer = document.querySelector('.cart-total');
     const placeOrderButton = document.querySelector('.place-order');
-    placeOrderButton.innerHTML = `<button class="place-order-btn">Plaseaza Comanda</button>`
+    placeOrderButton.innerHTML = `<button class="place-order-btn p-5 m-top border-radiushalf pointer">Plaseaza Comanda</button>`
 
 
 	function updateCart() {
@@ -137,8 +137,18 @@ document.addEventListener('DOMContentLoaded', () => {
         cartTotalContainer.innerHTML = 'Cosul de cumparaturi este gol';
        localStorage.removeItem('cart');
         alert('Comanda Plasata cu succes')
-    placeOrderButton.innerHTML = `<button disabled>Plaseaza Comanda</button>`}
-    else {alert('NoPinC')}
+    placeOrderButton.innerHTML = `<button class="p-5 m-top border-radiushalf pointer">Plaseaza Comanda</button>`}
+    else {alert('Nu ai produse in cos')}
         
     })
 });
+
+const obj = {
+a:1,
+b:2,
+c:3,
+}
+
+for (let key in obj) {
+	console.log(`${key} ${obj[key]}`)
+}

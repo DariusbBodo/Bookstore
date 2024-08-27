@@ -8,17 +8,32 @@ document.addEventListener('DOMContentLoaded',displayAllProducts);
 const mainContainer = document.querySelector('.main');
 
 
-// function getAllProducts() {
-// const url = 'https://668d7a70099db4c579f3186c.mockapi.io/Produsee';
-// return fetch(url).then((response) => response.json());
-// }
+// tracks the total products in cart
+function updateCartDisplay(cart) {
+    let totalQuantity = 0;
+
+    for (let productId in cart) {
+        if (cart.hasOwnProperty(productId)) {
+            totalQuantity += cart[productId].quantity;
+        }
+    }
+
+   
+    localStorage.setItem('totalQuantity', totalQuantity);
+
+    // Display totalQuantity in the cart
+    const produseInCos = document.querySelector('.totalProductsInCart');
+    produseInCos.innerHTML = `Cart ${totalQuantity}`;
+}
+
 
 async function displayAllProducts(){
 	const products = await getAllProducts();
 	// getAllProducts().then((products) =>
 		 mainContainer.innerHTML = products.map(mapProductToCard).join(' ');
 	
-	
+	const storedCart = JSON.parse(localStorage.getItem('cart')) || {};
+    updateCartDisplay(storedCart);
 	
 	//Adaugare buttons de AddToCart
 	const addToCartButtons = document.querySelectorAll('.add-to-cart');
@@ -29,7 +44,10 @@ addToCartButtons.forEach((button) => {
 		const name = button.getAttribute('data-name');
 		const imageUrl = button.getAttribute('data-image');
 
-	let cart = JSON.parse(localStorage.getItem('cart')) || {};
+//added const that keeps track of the items in cart
+
+
+	const cart = JSON.parse(localStorage.getItem('cart')) || {};
 	if (cart[productId]) {
 		cart[productId].quantity +=1 ;
 
@@ -42,10 +60,15 @@ addToCartButtons.forEach((button) => {
 		};
 		
 	};
-	localStorage.setItem('cart', JSON.stringify(cart));
+
 	
-	});
+
+	localStorage.setItem('cart', JSON.stringify(cart));
+	updateCartDisplay(cart);
+});
 })	
+}
+
 		// 	product => 
 		// `
 		// <div class="product-card flex-col gap-20 items-center justify-between">
@@ -58,7 +81,6 @@ addToCartButtons.forEach((button) => {
 		// `
 
 	// .join(' ')
-}
 //  async function getAllProducts() {
 // 	const response = await fetch(url);
 // 	const products = await response.json();
