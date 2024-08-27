@@ -80,13 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			// const descreaseDisabled = product.quantity === 1 ? 'disabled' : '';
 			productCard.innerHTML = `
 			<img width="20px" src=../${product.imageUrl} />
-				<div class="w-150 h-40 flex gap-20 justify-between items-center">
-            	<span>${product.name}</span>
-            	<div>
-						<button data-id=${id}  class="border-radius50 decrease">-</button>
-						<span>${product.quantity}</span>
-						<button data-id=${id} class="border-radius50 increase">+</button>
-            	</div>
+				<div class="flex gap-50 justify-between items-center">
+            		<span>${product.name}</span>
+            			<div class="flex gap-20 m-20">
+							<button data-id=${id}  class="border-radius50 decrease">-</button>
+							<span>${product.quantity}</span>
+							<button data-id=${id} class="border-radius50 increase">+</button>
+            			</div>
 				</div>
 				<span>${product.price * product.quantity} lei</span>
 				<!--<button data-id=${id} class=" border-radius50 delete">Sterge</button>-->
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
        localStorage.removeItem('cart');
         alert('Comanda Plasata cu succes')
     placeOrderButton.innerHTML = `<button disabled>Plaseaza Comanda</button>`}
-    else {placeOrderButton.innerHTML = `<button disabled>Plaseaza Comanda</button>`}
+    else {alert('NoPinC')}
         
     })
 });

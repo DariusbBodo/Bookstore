@@ -74,6 +74,10 @@ font-size: 20px;
     font-size: 10px;
     /* text-align: center; */
 }
+.description {
+    font-size: 10px;
+    /* text-align: center; */
+}
 .m-20 {
     margin: 20px;
 }
@@ -121,7 +125,4 @@ font-size: 20px;
     background-color: var(--secondary-color);
     padding:5px;
     cursor: pointer; 
-}
-.disabled {
-    disable
 }
