@@ -23,7 +23,8 @@ function updateCartDisplay(cart) {
 
     // Display totalQuantity in the cart
     const produseInCos = document.querySelector('.totalProductsInCart');
-    produseInCos.innerHTML = `Cart ${totalQuantity}`;
+                    
+    produseInCos.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Cart   ${totalQuantity}`;
 }
 
 

@@ -1,6 +1,6 @@
 export function mapProductToCard(product){
    return `
-   <div class="product-card flex-col gap-20 items-center justify-between">
+   <div class="product-card flex-col gap-20 items-center justify-between bcolor-white">
 		<h3 class="card-title-and-author title-font text-align-center">${product.name}  <span class="author" ><p>${product.author}</p></span> </h3>
             <a href='pages/details.html?id=${product.id}'>
                 <img src = ${product.imageUrl} width="100px"/>

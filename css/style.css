@@ -1,19 +1,54 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
 
-:root {
+/* :root {
     --primary-bg-color: #F8EDE3;
     --primary-text-color: black;
     --secondary-color: #D0B8A8;   
+} */
+:root {
+    --primary-bg-color: #FFF8E1;
+    --primary-text-color: black;
+    --secondary-color: #008080;
+    --button-color: #FF6F61;
+
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
+
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.merriweather-regular-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
 
 *{
     margin: 0;
     padding: 0;
 }
-body{
+
+.text-decoration0 {
+    text-decoration: none;
+}
+
+html, body{
     background-color: var(--primary-bg-color);
-    font-family: "Edu AU VIC WA NT Hand", cursive;
-        font-optical-sizing: auto;
+    font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+       height: 100%;
+       
+        
+    /* font-family: "Edu AU VIC WA NT Hand", cursive;
+        font-optical-sizing: auto; */
         /* font-weight: <weight>; */
         /* font-style: normal; */
 }
@@ -23,6 +58,9 @@ body{
     /* flex-direction: column; */
 
 }
+
+
+
 
 .flex-col{
     display: flex;
@@ -59,16 +97,26 @@ body{
     background-color: var(--secondary-color);
 }
 .navbar{
+font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: italic;
+    min-height: 50px;
+    
+/* 
 color: var(--primary-text-color);
 text-decoration: none;
-font-style: italic;
-font-size: 20px;
+font-size: 20px; */
 }
 .logo {
-    font-family: "Edu AU VIC WA NT Hand", cursive;
+
+    font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: italic;
+    /* font-family: "Edu AU VIC WA NT Hand", cursive;
         font-optical-sizing: auto;
         /* font-weight: <weight>; */
-        font-style: normal;
+        /* font-style: normal; */
+        /* color: black; */ 
 }
 .author {
     font-size: 10px;
@@ -85,7 +133,7 @@ font-size: 20px;
 .product-card {
     background-color: var(--primary-bg-color);
     width: 200px;   
-    border: solid 2px black;
+    border: solid 2px lightgray;
     border-radius: 10px;
     padding: 10px 5px;
 }
@@ -107,7 +155,7 @@ font-size: 20px;
     /* padding: 20px; */
     border-radius: 50px;
     border: none;
-    background-color:var(--primary-bg-color);
+    background-color:var(--button-color);
     cursor: pointer;
     /* background-color: black; */
     
@@ -120,9 +168,11 @@ font-size: 20px;
     width: 500px;
  }
  .border-radius50 {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: none;
-    background-color: var(--secondary-color);
+    background-color: var(--button-color);
     padding:5px;
     cursor: pointer; 
 }
@@ -137,4 +187,39 @@ background-color: var(--secondary-color);
 }
 .pointer {
     cursor: pointer;
+}
+
+.bcolor-white {
+    background-color: #F0F0F0;
+}
+.color-black {
+    color: #F0F0F0;
+}
+.button-color {
+    background-color: var(--button-color);
+}
+
+.footer {
+    margin-top: auto;
+    
+    background-color: var(--secondary-color);
+    height: fit-content;
+    min-height: 50px;
+    
+    
+}
+.home-btn {
+    padding: 10px;
+    width: fit-content;
+    border-radius: 50px;
+    border: none ;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    
+}
+
+.container {
+    display: flex;
+        flex-direction: column;
+        min-height: 100vh
 }

@@ -1,7 +1,14 @@
-:root {
+/* :root {
     --primary-bg-color: #F8EDE3;
     --primary-text-color: black;
     --secondary-color: #D0B8A8;
+} */
+
+:root {
+    --primary-bg-color: #FFF8E1;
+    --primary-text-color: black;
+    --secondary-color: #008080;
+    --button-color: #FF6F61;
 }
 
 .main {

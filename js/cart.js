@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const cartItemsContainer = document.querySelector('.cart-items');
 	const cartTotalContainer = document.querySelector('.cart-total');
     const placeOrderButton = document.querySelector('.place-order');
-    placeOrderButton.innerHTML = `<button class="place-order-btn p-5 m-top border-radiushalf pointer">Plaseaza Comanda</button>`
+    placeOrderButton.innerHTML = `<button class="place-order-btn p-5 m-top border-radiushalf pointer button-color">Plaseaza Comanda</button>`
 
 
 	function updateCart() {
@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				'flex justify-between items-center w-200';
 			// const descreaseDisabled = product.quantity === 1 ? 'disabled' : '';
 			productCard.innerHTML = `
-			<img width="20px" src=../${product.imageUrl} />
+			<img width="50px" src=../${product.imageUrl} />
 				<div class="flex gap-50 justify-between items-center">
             		<span>${product.name}</span>
-            			<div class="flex gap-20 m-20">
+            			<div class="flex gap-20	 ">
 							<button data-id=${id}  class="border-radius50 decrease">-</button>
 							<span>${product.quantity}</span>
 							<button data-id=${id} class="border-radius50 increase">+</button>

@@ -12,10 +12,10 @@ const detaliiProdus = await response.json();
 document.querySelector('.main').innerHTML = `
 <h2>${detaliiProdus.details}</h2>
         <div>
-                <button class='add-to-cart' data-id=${detaliiProdus.id} 
+                <button class='home-btn m-20' data-id=${detaliiProdus.id} 
                     data-name=${detaliiProdus.name} data-price=${detaliiProdus.price}
                     data-image=${detaliiProdus.imageUrl}>
-                    <a href="../index.html"><i class="fa-solid fa-book-journal-whills"></i>Home</a>
+                    <a class="color-black text-decoration0" href="../index.html"><i class="fa-solid fa-book-journal-whills"></i>Home</a>
                 </button>
         </div>`
 }
