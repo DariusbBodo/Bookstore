@@ -66,24 +66,28 @@ html, body{
     display: flex;
     flex-direction: column;
 }
-.justify-around{
-    justify-content: space-around;
-}
-.justify-between {
-    justify-content: space-between;
-}
-.wrap {
-    flex-wrap: wrap;
+.gap-20 {
+    gap: 20px;
 }
 .items-center {
     align-items: center;
 }
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
 .gap-10{
     gap: 10px;
 }
-.gap-20 {
-    gap: 20px;
-}
+
 .gap-50 {
     gap: 50px;}
 

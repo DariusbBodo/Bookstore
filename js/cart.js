@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		cartTotalContainer.innerHTML =
 			total === 0 ? 'Cosul de cumparaturi este gol' : 
-            total < 150 ? `Total: ${total + 20}lei - ${total} lei + Taxa Livrare: 20 lei` :
+            total < 150 ? `Total: ${total + 20} lei - ${total} lei + Taxa Livrare: 20 lei` :
             `Total: ${total} lei + Livrare Gratuita` ;
 	}
 

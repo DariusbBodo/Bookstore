@@ -21,3 +21,5 @@ document.querySelector('.main').innerHTML = `
 }
 
 // do not forget to add purchase button for details.html
+
+
