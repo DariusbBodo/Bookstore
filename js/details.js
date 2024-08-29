@@ -10,7 +10,8 @@ const productID = urlSearchParam.get('id');
 const response = await fetch(`${url}/${productID}`);
 const detaliiProdus = await response.json();
 document.querySelector('.main').innerHTML = `
-<h2>${detaliiProdus.details}</h2>
+<img width="100px" src=../${detaliiProdus.imageUrl} />
+<h2>${detaliiProdus.details}  <span>${detaliiProdus.price} lei</span></h2>
         <div>
                 <button class='home-btn m-20' data-id=${detaliiProdus.id} 
                     data-name=${detaliiProdus.name} data-price=${detaliiProdus.price}
